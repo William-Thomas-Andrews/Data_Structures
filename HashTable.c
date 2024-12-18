@@ -1,22 +1,5 @@
-// #include <stdio.h>
-// #include <stdlib.h>
-
-
-
-
-
 #include <stdio.h>
 #include <stdlib.h>
-
-
-void initHashTable(struct HashTable *table);
-int hashFunction(int key, int capacity);
-void addElementAt(struct HashTable *table, int key);
-void addElementAtReserve(struct HashTable *table, int key);
-void clear_reserve(struct HashTable *table);
-void reHash(struct HashTable *table);
-int probeFunction(int i, int j, int capacity);
-int collisionFunction(struct HashTable *table, int key, int capacity);
 
 
 // Define the struct
@@ -27,6 +10,15 @@ struct HashTable {
     int reserve_size;
     int capacity;  // Capacity of the array
 };
+
+void initHashTable(struct HashTable *table);
+int hashFunction(int key, int capacity);
+void addElementAt(struct HashTable *table, int key);
+void addElementAtReserve(struct HashTable *table, int key);
+void clear_reserve(struct HashTable *table);
+void reHash(struct HashTable *table);
+int probeFunction(int i, int j, int capacity);
+int collisionFunction(struct HashTable *table, int key, int capacity);
 
 // Function to initialize the HashTable
 void initHashTable(struct HashTable *table) {
@@ -117,7 +109,11 @@ int collisionFunction(struct HashTable *table, int key, int capacity) {
 int main() {
     struct HashTable table;
     initHashTable(&table);
-    printf("HashTable initialized with capacity: ")
-    addElementAt()
+    printf("HashTable initialized with capacity: %d\n", table.capacity);
+    addElementAt(&table, 5);
+    for (int i = 0; i <= table.size; i++) {
+        printf("%d\n", table.arr[i]);
+    }
+    return 0;
     
 }
