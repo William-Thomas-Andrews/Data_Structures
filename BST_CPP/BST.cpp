@@ -230,7 +230,6 @@ class Optimal_BST
 int main()
 {
 
-    ////// then generalize to type T insertion, then do practice problems on dynamic programming
     Optimal_BST bst = Optimal_BST();
 
     bst.insert(10);
